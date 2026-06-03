@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- Title -->
+    <mxCell id="2" value="Complete Key Derivation Pipeline — SRAM PUF System" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="200" y="10" width="700" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- STEP 1: SRAM -->
+    <mxCell id="10" value="256 SRAM Cells&#xa;(Physical Chip)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="430" y="60" width="200" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="11" value="Unique per chip due to&#xa;manufacturing variation&#xa;(cell_bias deterministic per cell)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="650" y="70" width="250" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- arrow 1 -->
+    <mxCell id="12" value="10 power-up cycles&#xa;puf_response[255:0]&#xa;meta_flags[255:0]" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="490" y="125" width="200" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="13" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=3;" edge="1" parent="1">
+      <mxGeometry x="530" y="120" width="10" height="10" as="geometry">
+        <mxPoint x="530" y="120" as="sourcePoint" />
+        <mxPoint x="530" y="175" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- STEP 2: Stability Filter -->
+    <mxCell id="20" value="Stability Filter&#xa;(ENROLL_ANALYZE + ENROLL_SELECT)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="380" y="175" width="300" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="21" value="Majority vote over 10 cycles&#xa;stability_count[i] &gt;= 8/10&#xa;meta_flags[i] = 0 (exclude metastable)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="690" y="185" width="280" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- arrow 2 -->
+    <mxCell id="22" value="stable_mask[255:0]&#xa;256 bits filtered" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="490" y="240" width="200" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="23" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=3;" edge="1" parent="1">
+      <mxGeometry x="530" y="235" width="10" height="10" as="geometry">
+        <mxPoint x="530" y="235" as="sourcePoint" />
+        <mxPoint x="530" y="285" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- STEP 3: Fuzzy Extractor -->
+    <mxCell id="30" value="Fuzzy Extractor&#xa;BCH(31,16,3) Error Correction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="380" y="285" width="300" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="31" value="8 blocks × 16 bits encoded&#xa;8 × 31 = 248-bit helper data&#xa;Corrects up to 3 bit errors per block" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="690" y="295" width="280" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- helper data branch -->
+    <mxCell id="32" value="helper_data_out[247:0]&#xa;→ stored on tap card (public)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="80" y="295" width="200" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="33" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#b85450;dashed=1;" edge="1" parent="1">
+      <mxGeometry x="380" y="315" width="10" height="10" as="geometry">
+        <mxPoint x="380" y="315" as="sourcePoint" />
+        <mxPoint x="280" y="315" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- arrow 3 -->
+    <mxCell id="34" value="fuzzy_secret[127:0]&#xa;128-bit stable secret" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="490" y="350" width="200" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="35" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=3;" edge="1" parent="1">
+      <mxGeometry x="530" y="345" width="10" height="10" as="geometry">
+        <mxPoint x="530" y="345" as="sourcePoint" />
+        <mxPoint x="530" y="395" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- STEP 4: SHA-256 -->
+    <mxCell id="40" value="SHA-256 Hash Function&#xa;(key_gen.v + sha256_core.v)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="380" y="395" width="300" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="41" value="Pad 128→512 bits&#xa;64-round compression function&#xa;~130 clock cycles" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="690" y="405" width="280" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- arrow 4 -->
+    <mxCell id="42" value="keygen_key[255:0]&#xa;256-bit intermediate key" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="490" y="460" width="200" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="43" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=3;" edge="1" parent="1">
+      <mxGeometry x="530" y="455" width="10" height="10" as="geometry">
+        <mxPoint x="530" y="455" as="sourcePoint" />
+        <mxPoint x="530" y="505" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- STEP 5: LFSR -->
+    <mxCell id="50" value="256-bit Galois LFSR&#xa;Key Expansion / Whitening" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="380" y="505" width="300" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="51" value="Taps: 255, 253, 250, 245&#xa;Seeded with SHA-256 output&#xa;Runs exactly 256 clock cycles" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="690" y="515" width="280" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- arrow 5 -->
+    <mxCell id="52" value="lfsr_out[255:0]" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="490" y="570" width="200" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="53" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=3;" edge="1" parent="1">
+      <mxGeometry x="530" y="565" width="10" height="10" as="geometry">
+        <mxPoint x="530" y="565" as="sourcePoint" />
+        <mxPoint x="530" y="605" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FINAL KEY -->
+    <mxCell id="60" value="key_out[255:0]&#xa;Final 256-bit Cryptographic Key" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="355" y="605" width="350" height="70" as="geometry" />
+    </mxCell>
+
+    <!-- Key properties -->
+    <mxCell id="61" value="Key Properties:&#xa;• Unique per physical chip&#xa;• Same every power-up (deterministic)&#xa;• Never stored anywhere&#xa;• Only exists transiently during tap&#xa;• 256-bit = AES-256 strength" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="80" y="605" width="240" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- Bit widths summary -->
+    <mxCell id="62" value="Bit Width Summary:&#xa;SRAM array:    256 bits&#xa;Stable secret: 128 bits&#xa;Helper data:   248 bits&#xa;SHA-256 input: 512 bits (padded)&#xa;SHA-256 output:256 bits&#xa;LFSR seed:     256 bits&#xa;Final key:     256 bits" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="740" y="605" width="220" height="140" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>

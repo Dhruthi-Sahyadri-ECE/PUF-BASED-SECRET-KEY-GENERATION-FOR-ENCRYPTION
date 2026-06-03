@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel grid="0" page="0" background="#ffffff">
+  <root>
+    <mxCell id="0"/><mxCell id="1" parent="0"/>
+
+    <!-- Title -->
+    <mxCell id="2" value="BCH(31,16,3) Codec" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="280" y="20" width="240" height="30" as="geometry"/>
+    </mxCell>
+
+    <!-- ENCODER -->
+    <mxCell id="3" value="ENCODER" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontStyle=1;fontColor=#0000CC;" vertex="1" parent="1">
+      <mxGeometry x="40" y="65" width="100" height="25" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="10" value="data_in[15:0]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="40" y="100" width="110" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="11" value="Polynomial Division&#xa;÷ g(x) = 16'h8FAF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="210" y="100" width="160" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="12" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry x="150" y="120" width="1" height="1" as="geometry">
+        <mxPoint x="150" y="120" as="sourcePoint"/><mxPoint x="210" y="120" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="13" value="{data[15:0] | parity[14:0]}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="430" y="100" width="180" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="14" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry x="370" y="120" width="1" height="1" as="geometry">
+        <mxPoint x="370" y="120" as="sourcePoint"/><mxPoint x="430" y="120" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="14b" value="code_out[30:0]" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="430" y="85" width="180" height="15" as="geometry"/>
+    </mxCell>
+
+    <!-- divider -->
+    <mxCell id="20" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#AAAAAA;dashed=1;" edge="1" parent="1">
+      <mxGeometry x="40" y="165" width="1" height="1" as="geometry">
+        <mxPoint x="40" y="165" as="sourcePoint"/><mxPoint x="700" y="165" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- DECODER -->
+    <mxCell id="21" value="DECODER" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontStyle=1;fontColor=#006600;" vertex="1" parent="1">
+      <mxGeometry x="40" y="175" width="100" height="25" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="30" value="code_in[30:0]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="40" y="215" width="110" height="40" as="geometry"/>
+    </mxCell>
+
+    <!-- Step 1 -->
+    <mxCell id="31" value="1. Syndrome&#xa;S[1..6]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="200" y="215" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="32" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry x="150" y="235" width="1" height="1" as="geometry">
+        <mxPoint x="150" y="235" as="sourcePoint"/><mxPoint x="200" y="235" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Step 2 -->
+    <mxCell id="33" value="2. Berlekamp-&#xa;Massey (6 iter)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="350" y="215" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="34" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry x="300" y="235" width="1" height="1" as="geometry">
+        <mxPoint x="300" y="235" as="sourcePoint"/><mxPoint x="350" y="235" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Step 3 -->
+    <mxCell id="35" value="3. Chien Search&#xa;(31 positions)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="520" y="215" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="36" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry x="470" y="235" width="1" height="1" as="geometry">
+        <mxPoint x="470" y="235" as="sourcePoint"/><mxPoint x="520" y="235" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Step 4 -->
+    <mxCell id="37" value="4. Flip Error Bits&#xa;(up to 3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="690" y="215" width="110" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="38" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry x="640" y="235" width="1" height="1" as="geometry">
+        <mxPoint x="640" y="235" as="sourcePoint"/><mxPoint x="690" y="235" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- data_out -->
+    <mxCell id="39" value="data_out[15:0]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="690" y="290" width="110" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="40" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry x="745" y="255" width="1" height="1" as="geometry">
+        <mxPoint x="745" y="255" as="sourcePoint"/><mxPoint x="745" y="290" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- error flag -->
+    <mxCell id="41" value="error_flag" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="520" y="290" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="42" value="if errors &gt; 3" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=9;" vertex="1" parent="1">
+      <mxGeometry x="520" y="275" width="100" height="15" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>

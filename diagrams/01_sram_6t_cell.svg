@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="580" viewBox="0 0 720 580" style="background:#ffffff;font-family:Arial,sans-serif;">
+
+  <!-- ===== TITLE ===== -->
+  <text x="360" y="30" text-anchor="middle" font-size="18" font-weight="bold">SRAM 6T Cell — PUF Core</text>
+
+  <!-- ===== VDD ===== -->
+  <text x="360" y="58" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">VDD</text>
+  <!-- VDD horizontal rail -->
+  <line x1="180" y1="70" x2="540" y2="70" stroke="#000" stroke-width="2.5"/>
+  <!-- drops to P1 and P2 -->
+  <line x1="240" y1="70" x2="240" y2="90" stroke="#000" stroke-width="2"/>
+  <line x1="480" y1="70" x2="480" y2="90" stroke="#000" stroke-width="2"/>
+
+  <!-- ===== PMOS P1 (left) ===== -->
+  <!-- PMOS symbol: vertical channel line, gate line with bubble -->
+  <!-- channel vertical -->
+  <line x1="240" y1="90" x2="240" y2="175" stroke="#000" stroke-width="2"/>
+  <!-- gate horizontal stub -->
+  <line x1="200" y1="132" x2="225" y2="132" stroke="#000" stroke-width="2"/>
+  <!-- gate vertical bar -->
+  <line x1="225" y1="110" x2="225" y2="155" stroke="#000" stroke-width="2.5"/>
+  <!-- PMOS bubble on gate -->
+  <circle cx="215" cy="132" r="7" fill="none" stroke="#000" stroke-width="1.5"/>
+  <!-- drain-source lines -->
+  <line x1="225" y1="110" x2="240" y2="110" stroke="#000" stroke-width="2"/>
+  <line x1="225" y1="155" x2="240" y2="155" stroke="#000" stroke-width="2"/>
+  <!-- arrow pointing inward (PMOS) -->
+  <polygon points="232,132 240,125 240,139" fill="#000"/>
+  <!-- label -->
+  <text x="175" y="136" font-size="12" font-weight="bold" fill="#1a5276">P1</text>
+
+  <!-- ===== PMOS P2 (right) ===== -->
+  <line x1="480" y1="90" x2="480" y2="175" stroke="#000" stroke-width="2"/>
+  <line x1="520" y1="132" x2="495" y2="132" stroke="#000" stroke-width="2"/>
+  <line x1="495" y1="110" x2="495" y2="155" stroke="#000" stroke-width="2.5"/>
+  <circle cx="505" cy="132" r="7" fill="none" stroke="#000" stroke-width="1.5"/>
+  <line x1="495" y1="110" x2="480" y2="110" stroke="#000" stroke-width="2"/>
+  <line x1="495" y1="155" x2="480" y2="155" stroke="#000" stroke-width="2"/>
+  <polygon points="488,132 480,125 480,139" fill="#000"/>
+  <text x="510" y="136" font-size="12" font-weight="bold" fill="#1a5276">P2</text>
+
+  <!-- ===== NODE Q (left internal node) ===== -->
+  <line x1="240" y1="175" x2="240" y2="210" stroke="#000" stroke-width="2"/>
+  <circle cx="240" cy="210" r="5" fill="#d4ac0d"/>
+  <text x="215" y="215" font-size="13" font-weight="bold" fill="#d4ac0d">Q</text>
+
+  <!-- ===== NODE QB (right internal node) ===== -->
+  <line x1="480" y1="175" x2="480" y2="210" stroke="#000" stroke-width="2"/>
+  <circle cx="480" cy="210" r="5" fill="#d4ac0d"/>
+  <text x="488" y="215" font-size="13" font-weight="bold" fill="#d4ac0d">QB</text>
+
+  <!-- ===== CROSS-COUPLED CONNECTIONS (red dashed) ===== -->
+  <!-- Q drives gate of P2 and N2: Q -> right gate -->
+  <polyline points="240,210 360,210 360,132 520,132" fill="none" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <!-- QB drives gate of P1 and N1: QB -> left gate -->
+  <polyline points="480,210 360,210 360,132 200,132" fill="none" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <!-- cross label -->
+  <text x="360" y="205" text-anchor="middle" font-size="10" fill="#e74c3c" font-style="italic">cross-coupled</text>
+
+  <!-- ===== NMOS N3 (left access transistor) ===== -->
+  <!-- channel -->
+  <line x1="240" y1="210" x2="240" y2="310" stroke="#000" stroke-width="2"/>
+  <!-- gate bar -->
+  <line x1="215" y1="245" x2="215" y2="275" stroke="#000" stroke-width="2.5"/>
+  <!-- gate stub -->
+  <line x1="180" y1="260" x2="215" y2="260" stroke="#000" stroke-width="2"/>
+  <!-- drain/source stubs -->
+  <line x1="215" y1="245" x2="240" y2="245" stroke="#000" stroke-width="2"/>
+  <line x1="215" y1="275" x2="240" y2="275" stroke="#000" stroke-width="2"/>
+  <!-- NMOS arrow pointing outward -->
+  <polygon points="228,260 240,253 240,267" fill="#000"/>
+  <text x="148" y="264" font-size="12" font-weight="bold" fill="#1e8449">N3</text>
+
+  <!-- ===== NMOS N4 (right access transistor) ===== -->
+  <line x1="480" y1="210" x2="480" y2="310" stroke="#000" stroke-width="2"/>
+  <line x1="505" y1="245" x2="505" y2="275" stroke="#000" stroke-width="2.5"/>
+  <line x1="540" y1="260" x2="505" y2="260" stroke="#000" stroke-width="2"/>
+  <line x1="505" y1="245" x2="480" y2="245" stroke="#000" stroke-width="2"/>
+  <line x1="505" y1="275" x2="480" y2="275" stroke="#000" stroke-width="2"/>
+  <polygon points="492,260 480,253 480,267" fill="#000"/>
+  <text x="515" y="264" font-size="12" font-weight="bold" fill="#1e8449">N4</text>
+
+  <!-- ===== WORD LINE ===== -->
+  <!-- WL horizontal connecting N3 and N4 gates -->
+  <line x1="100" y1="260" x2="180" y2="260" stroke="#9b59b6" stroke-width="2"/>
+  <line x1="540" y1="260" x2="620" y2="260" stroke="#9b59b6" stroke-width="2"/>
+  <text x="50" y="264" font-size="12" font-weight="bold" fill="#9b59b6">WL</text>
+  <text x="625" y="264" font-size="12" font-weight="bold" fill="#9b59b6">WL</text>
+
+  <!-- ===== BIT LINES ===== -->
+  <!-- BL connects to N3 source (top of N3) -->
+  <line x1="240" y1="245" x2="100" y2="245" stroke="#27ae60" stroke-width="2"/>
+  <line x1="100" y1="200" x2="100" y2="245" stroke="#27ae60" stroke-width="2"/>
+  <text x="75" y="195" font-size="12" font-weight="bold" fill="#27ae60">BL</text>
+  <!-- BLB connects to N4 source -->
+  <line x1="480" y1="245" x2="620" y2="245" stroke="#27ae60" stroke-width="2"/>
+  <line x1="620" y1="200" x2="620" y2="245" stroke="#27ae60" stroke-width="2"/>
+  <text x="610" y="195" font-size="12" font-weight="bold" fill="#27ae60">BLB</text>
+
+  <!-- ===== NMOS N1 (left pull-down) ===== -->
+  <line x1="240" y1="310" x2="240" y2="410" stroke="#000" stroke-width="2"/>
+  <line x1="215" y1="345" x2="215" y2="375" stroke="#000" stroke-width="2.5"/>
+  <!-- N1 gate connected to QB via cross-couple (already drawn) -->
+  <line x1="215" y1="345" x2="240" y2="345" stroke="#000" stroke-width="2"/>
+  <line x1="215" y1="375" x2="240" y2="375" stroke="#000" stroke-width="2"/>
+  <polygon points="228,360 240,353 240,367" fill="#000"/>
+  <!-- N1 gate wire down from cross-couple line -->
+  <line x1="215" y1="275" x2="215" y2="345" stroke="#000" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="148" y="364" font-size="12" font-weight="bold" fill="#1e8449">N1</text>
+
+  <!-- ===== NMOS N2 (right pull-down) ===== -->
+  <line x1="480" y1="310" x2="480" y2="410" stroke="#000" stroke-width="2"/>
+  <line x1="505" y1="345" x2="505" y2="375" stroke="#000" stroke-width="2.5"/>
+  <line x1="505" y1="345" x2="480" y2="345" stroke="#000" stroke-width="2"/>
+  <line x1="505" y1="375" x2="480" y2="375" stroke="#000" stroke-width="2"/>
+  <polygon points="492,360 480,353 480,367" fill="#000"/>
+  <line x1="505" y1="275" x2="505" y2="345" stroke="#000" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="515" y="364" font-size="12" font-weight="bold" fill="#1e8449">N2</text>
+
+  <!-- ===== GND ===== -->
+  <line x1="180" y1="410" x2="540" y2="410" stroke="#000" stroke-width="2.5"/>
+  <line x1="240" y1="410" x2="240" y2="430" stroke="#000" stroke-width="2"/>
+  <line x1="480" y1="410" x2="480" y2="430" stroke="#000" stroke-width="2"/>
+  <!-- GND symbol left -->
+  <line x1="215" y1="430" x2="265" y2="430" stroke="#000" stroke-width="2.5"/>
+  <line x1="222" y1="440" x2="258" y2="440" stroke="#000" stroke-width="2"/>
+  <line x1="230" y1="450" x2="250" y2="450" stroke="#000" stroke-width="1.5"/>
+  <!-- GND symbol right -->
+  <line x1="455" y1="430" x2="505" y2="430" stroke="#000" stroke-width="2.5"/>
+  <line x1="462" y1="440" x2="498" y2="440" stroke="#000" stroke-width="2"/>
+  <line x1="470" y1="450" x2="490" y2="450" stroke="#000" stroke-width="1.5"/>
+
+  <!-- ===== LEGEND ===== -->
+  <rect x="30" y="480" width="280" height="85" rx="6" fill="#f8f9fa" stroke="#aaa" stroke-width="1"/>
+  <text x="45" y="500" font-size="11" font-weight="bold">Legend</text>
+  <line x1="45" y1="515" x2="75" y2="515" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="80" y="519" font-size="11">Cross-coupled (PUF feedback)</text>
+  <line x1="45" y1="535" x2="75" y2="535" stroke="#9b59b6" stroke-width="2"/>
+  <text x="80" y="539" font-size="11">Word Line (WL)</text>
+  <line x1="45" y1="555" x2="75" y2="555" stroke="#27ae60" stroke-width="2"/>
+  <text x="80" y="559" font-size="11">Bit Lines (BL / BLB)</text>
+
+</svg>

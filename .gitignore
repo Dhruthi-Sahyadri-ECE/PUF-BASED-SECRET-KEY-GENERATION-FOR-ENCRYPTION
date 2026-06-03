@@ -1,0 +1,12 @@
+# Vivado cache and generated files
+PHASE_FINAL.cache/
+PHASE_FINAL.sim/
+PHASE_FINAL.hw/
+PHASE_FINAL.ip_user_files/
+*.jou
+*.log
+*.pb
+*.wdb
+*.str
+xsim.dir/
+.Xil/

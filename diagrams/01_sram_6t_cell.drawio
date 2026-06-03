@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel grid="0" page="0" background="#ffffff">
+  <root>
+    <mxCell id="0"/><mxCell id="1" parent="0"/>
+
+    <!-- Title -->
+    <mxCell id="2" value="SRAM 6T Cell (PUF Core)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=15;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="220" y="15" width="280" height="28" as="geometry"/>
+    </mxCell>
+
+    <!-- ======== VDD ======== -->
+    <mxCell id="3" value="VDD" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="330" y="40" width="60" height="22" as="geometry"/>
+    </mxCell>
+    <!-- VDD down to horizontal rail -->
+    <mxCell id="4" value="" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="360" y="62" as="sourcePoint"/><mxPoint x="360" y="80" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <!-- VDD horizontal rail -->
+    <mxCell id="5" value="" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="200" y="80" as="sourcePoint"/><mxPoint x="520" y="80" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <!-- left VDD drop -->
+    <mxCell id="6" value="" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="240" y="80" as="sourcePoint"/><mxPoint x="240" y="100" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <!-- right VDD drop -->
+    <mxCell id="7" value="" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="480" y="80" as="sourcePoint"/><mxPoint x="480" y="100" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ======== PMOS P1 (left) — draw.io mxgraph PMOS symbol ======== -->
+    <!-- PMOS body: circle on gate + arrow pointing IN -->
+    <mxCell id="p1" value="P1" style="shape=mxgraph.electrical.signal_sources.signal_source;direction=south;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="210" y="100" width="60" height="80" as="geometry"/>
+    </mxCell>
+
+    <!-- PMOS P2 (right) -->
+    <mxCell id="p2" value="P2" style="shape=mxgraph.electrical.signal_sources.signal_source;direction=south;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="450" y="100" width="60" height="80" as="geometry"/>
+    </mxCell>
+
+    <!-- ======== Use proper MOSFET shapes from mxgraph stencil ======== -->
+    <!-- LEFT PMOS P1 — using transistor pmos shape -->
+    <mxCell id="P1" value="P1" style="shape=mxgraph.electrical.transistors.pmos_transistor_2;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="195" y="95" width="70" height="90" as="geometry"/>
+    </mxCell>
+
+    <!-- RIGHT PMOS P2 -->
+    <mxCell id="P2" value="P2" style="shape=mxgraph.electrical.transistors.pmos_transistor_2;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="455" y="95" width="70" height="90" as="geometry"/>
+    </mxCell>
+
+    <!-- LEFT NMOS N1 (pull-down) -->
+    <mxCell id="N1" value="N1" style="shape=mxgraph.electrical.transistors.nmos_transistor_2;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="195" y="280" width="70" height="90" as="geometry"/>
+    </mxCell>
+
+    <!-- RIGHT NMOS N2 (pull-down) -->
+    <mxCell id="N2" value="N2" style="shape=mxgraph.electrical.transistors.nmos_transistor_2;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="455" y="280" width="70" height="90" as="geometry"/>
+    </mxCell>
+
+    <!-- LEFT NMOS N3 (access) -->
+    <mxCell id="N3" value="N3" style="shape=mxgraph.electrical.transistors.nmos_transistor_2;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="195" y="190" width="70" height="90" as="geometry"/>
+    </mxCell>
+
+    <!-- RIGHT NMOS N4 (access) -->
+    <mxCell id="N4" value="N4" style="shape=mxgraph.electrical.transistors.nmos_transistor_2;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="455" y="190" width="70" height="90" as="geometry"/>
+    </mxCell>
+
+    <!-- ======== Node Q (between P1 drain and N1/N3 drain) ======== -->
+    <mxCell id="Q" value="Q" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="215" y="185" width="36" height="36" as="geometry"/>
+    </mxCell>
+
+    <!-- Node QB -->
+    <mxCell id="QB" value="QB" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="469" y="185" width="36" height="36" as="geometry"/>
+    </mxCell>
+
+    <!-- ======== Cross-coupled connections (red dashed) ======== -->
+    <!-- Q drives gate of P2 and N2 -->
+    <mxCell id="cc1" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=1.5;strokeColor=#FF0000;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="Q" target="P2">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="360" y="203"/>
+          <mxPoint x="360" y="140"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="cc2" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=1.5;strokeColor=#FF0000;dashed=1;" edge="1" parent="1" source="Q" target="N2">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="360" y="203"/>
+          <mxPoint x="360" y="325"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- QB drives gate of P1 and N1 -->
+    <mxCell id="cc3" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=1.5;strokeColor=#FF0000;dashed=1;" edge="1" parent="1" source="QB" target="P1">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="360" y="203"/>
+          <mxPoint x="360" y="140"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="cc4" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=1.5;strokeColor=#FF0000;dashed=1;" edge="1" parent="1" source="QB" target="N1">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="360" y="203"/>
+          <mxPoint x="360" y="325"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ======== GND ======== -->
+    <!-- GND horizontal rail -->
+    <mxCell id="gnd_rail" value="" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="200" y="460" as="sourcePoint"/><mxPoint x="520" y="460" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="gnd_left" value="" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="240" y="460" as="sourcePoint"/><mxPoint x="240" y="480" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="gnd_right" value="" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="480" y="460" as="sourcePoint"/><mxPoint x="480" y="480" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <!-- GND symbol left -->
+    <mxCell id="gnd_sym_l" value="GND" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="210" y="480" width="60" height="22" as="geometry"/>
+    </mxCell>
+    <!-- GND symbol right -->
+    <mxCell id="gnd_sym_r" value="GND" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="450" y="480" width="60" height="22" as="geometry"/>
+    </mxCell>
+
+    <!-- ======== Word Line (WL) ======== -->
+    <mxCell id="wl_label" value="WL" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontStyle=1;fontColor=#9900FF;" vertex="1" parent="1">
+      <mxGeometry x="330" y="228" width="40" height="22" as="geometry"/>
+    </mxCell>
+    <!-- WL to N3 gate -->
+    <mxCell id="wl_left" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=1.5;strokeColor=#9900FF;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="330" y="238" as="sourcePoint"/><mxPoint x="265" y="238" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <!-- WL to N4 gate -->
+    <mxCell id="wl_right" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=1.5;strokeColor=#9900FF;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="238" as="sourcePoint"/><mxPoint x="455" y="238" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ======== Bit Lines ======== -->
+    <!-- BL left -->
+    <mxCell id="bl_label" value="BL" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontStyle=1;fontColor=#006600;" vertex="1" parent="1">
+      <mxGeometry x="120" y="228" width="40" height="22" as="geometry"/>
+    </mxCell>
+    <mxCell id="bl_line" value="" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#006600;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="160" y="238" as="sourcePoint"/><mxPoint x="195" y="238" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <!-- BLB right -->
+    <mxCell id="blb_label" value="BLB" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontStyle=1;fontColor=#006600;" vertex="1" parent="1">
+      <mxGeometry x="560" y="228" width="40" height="22" as="geometry"/>
+    </mxCell>
+    <mxCell id="blb_line" value="" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#006600;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="560" y="238" as="sourcePoint"/><mxPoint x="525" y="238" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Cross-couple label -->
+    <mxCell id="cc_label" value="cross-coupled" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#FF0000;fontStyle=2;" vertex="1" parent="1">
+      <mxGeometry x="310" y="195" width="100" height="18" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>
