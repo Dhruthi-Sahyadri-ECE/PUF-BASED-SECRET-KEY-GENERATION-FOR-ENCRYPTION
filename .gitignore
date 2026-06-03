@@ -1,3 +1,7 @@
+# Diagrams (local only)
+diagrams/
+circuit_diagrams.md
+
 # Vivado cache and generated files
 PHASE_FINAL.cache/
 PHASE_FINAL.sim/
