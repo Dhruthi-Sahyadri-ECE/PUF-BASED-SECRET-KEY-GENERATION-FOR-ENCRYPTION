@@ -9,7 +9,12 @@ SRAM PUFs exploit manufacturing variations in SRAM cells to generate unique, dev
 ## Architecture
 
 ```
-SRAM PUF Core → Fuzzy Extractor → BCH/Hamming Codec → SHA-256 → 256-bit Key
+SRAM PUF Core (256 cells)
+    → Stability Filtering (10 power-up cycles, majority vote)
+    → Fuzzy Extractor (BCH or Hamming ECC)
+    → SHA-256 Key Generator (128-bit secret → 256-bit hash)
+    → 256-bit LFSR Key Expansion (256 cycles)
+    → Final 256-bit Cryptographic Key
 ```
 
 ## Modules
